@@ -3,6 +3,7 @@
 ## 项目
 
 - [LiteLLM + Langfuse 本地观测接入](projects/litellm-langfuse/overview.md)
+- [本地知识库建设与同步配置](projects/knowledge-base/overview.md)
 
 ## 概念
 
@@ -18,11 +19,13 @@
 
 - [把阶段成果录入知识库](playbooks/capture-project-stage-result.md)
 - [生成 Word 架构设计文档](playbooks/create-architecture-design-doc.md)
+- [配置 Obsidian + GitHub 知识库同步](playbooks/setup-obsidian-git-sync.md)
 
 ## 排障
 
 - [LiteLLM/OpenAI SDK 风格请求被上游拦截](troubleshooting/litellm-openai-sdk-headers-blocked.md)
 - [Word 架构图比例不完整](troubleshooting/word-architecture-image-aspect-ratio.md)
+- [Homebrew 安装 Obsidian 下载失败](troubleshooting/obsidian-homebrew-download-failed.md)
 
 ## 模板
 
