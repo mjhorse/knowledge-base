@@ -17,7 +17,9 @@ status: active
 - 将 `/Users/mjhorse/knowledge-base` 作为 Obsidian Vault 使用。
 - 将知识库关联到 GitHub 远程仓库。
 - 配置 Obsidian Git 插件，实现自动本地提交和远程同步。
+- 配置 Obsidian Copilot 使用 Claude Code 同源 Claude 模型。
 - 增加适合 Obsidian 的 `.gitignore`，避免提交本机状态、缓存和密钥文件。
+- 增加 daily note 日记链接锚点，让阶段成果可以按日期回顾并形成 Obsidian 双链。
 
 ## 已完成事项
 
@@ -28,6 +30,8 @@ status: active
 - 安装并启用 Obsidian Git 插件。
 - 配置 Obsidian Git 自动提交与推送策略。
 - 新增 `.gitignore` 并推送到远程仓库。
+- 安装 Copilot 插件，并确认 `claude-sonnet-4-6 | anthropic` 可用。
+- 更新知识库 capture/query skills：录入时维护 daily note 双锚点链接，查询时将这些链接作为时间线索引。
 
 ## 当前建议配置
 
@@ -43,6 +47,8 @@ status: active
 - `Auto commit interval` 是本地提交频率，不会直接上传到 GitHub。
 - `Auto push interval` 是远程推送频率，会把本地已提交内容上传到 GitHub。
 - `Sync` 比单独 `Push` 更适合作为手动同步命令，因为它通常会同时处理拉取、提交和推送。
+- Copilot 接入 Claude Code 同源模型时，`claude-sonnet-4-6` 应使用 Anthropic provider；OpenAI-compatible provider 对该模型不可用。
+- 日记链接使用 `<!-- notehelper-links -->` 双锚点，知识库录入时在锚点之间插入去重后的 Obsidian wikilinks。
 
 ## 产出物
 
@@ -51,6 +57,9 @@ status: active
 - Git 忽略规则：`/Users/mjhorse/knowledge-base/.gitignore`
 - 操作手册：`playbooks/setup-obsidian-git-sync.md`
 - 排障记录：`troubleshooting/obsidian-homebrew-download-failed.md`
+- Copilot 配置手册：`playbooks/configure-obsidian-copilot-claude.md`
+- Daily note 模板：`templates/daily-note-template.md`
+- Knowledge wiki skills：`/Users/mjhorse/.claude/skills/knowledge-wiki-capture/SKILL.md`、`/Users/mjhorse/.claude/skills/knowledge-wiki-query/SKILL.md`
 
 ## 下一步
 

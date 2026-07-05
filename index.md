@@ -23,6 +23,7 @@
 - [配置 Obsidian + GitHub 知识库同步](playbooks/setup-obsidian-git-sync.md)
 - [gogcli Gmail OAuth 授权与验证](playbooks/gogcli-gmail-oauth-auth-and-verify.md)
 - [OpenClaw/飞书远程触发本地 Gmail 发信](playbooks/openclaw-feishu-gmail-send.md)
+- [配置 Obsidian Copilot 使用 Claude Code 同源模型](playbooks/configure-obsidian-copilot-claude.md)
 
 ## 排障
 
