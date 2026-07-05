@@ -13,11 +13,11 @@
             "state": {
               "type": "bases",
               "state": {
-                "file": "未命名 1.base",
+                "file": "未命名.base",
                 "viewName": "表格"
               },
               "icon": "lucide-table",
-              "title": "未命名 1"
+              "title": "未命名"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名 1.base",
+                "file": "未命名.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "未命名 1 的反向链接列表"
+              "title": "未命名 的反向链接列表"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "未命名 1.base",
+                "file": "未命名.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "未命名 1 的出链列表"
+              "title": "未命名 的出链列表"
             }
           },
           {
@@ -155,21 +155,31 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名 1.base",
+                "file": "未命名.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 1 的大纲"
+              "title": "未命名 的大纲"
+            }
+          },
+          {
+            "id": "7db96c6903c78043",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,24 +189,25 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "baaa3f273e092ad9",
   "lastOpenFiles": [
+    "projects/litellm-langfuse/decisions.md",
     "未命名.base",
     "未命名 1.base",
-    "README.md",
-    "index.md",
     "2026-07-05.md",
-    "未命名.canvas",
+    "README.md",
+    "projects/litellm-langfuse/overview.md",
+    "projects/litellm-langfuse/artifacts.md",
+    "inbox/知识库同步测试.md.canvas",
+    "index.md",
     "templates/project-summary-template.md",
     "daily/2026/2026-07-05.md",
     "projects/litellm-langfuse/troubleshooting.md",
-    "projects/litellm-langfuse/overview.md",
     "projects/litellm-langfuse/deployment.md",
-    "projects/litellm-langfuse/decisions.md",
-    "projects/litellm-langfuse/artifacts.md",
     "projects/litellm-langfuse/architecture.md"
   ]
 }

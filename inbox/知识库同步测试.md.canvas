@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"7170001b07c80668","x":-121,"y":-5,"width":250,"height":60,"type":"text","text":"这是一个测试"},
+		{"id":"ed7f834f606e2aff","x":97,"y":-5,"width":250,"height":60,"type":"text","text":""},
+		{"id":"23b356146a86feb2","x":-254,"y":-248,"width":250,"height":60,"type":"text","text":"测试"},
+		{"id":"a1f287535e65677f","x":-620,"y":-120,"width":400,"height":400,"type":"file","file":"inbox/知识库同步测试.md.canvas"}
+	],
+	"edges":[]
+}
