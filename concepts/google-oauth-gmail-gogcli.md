@@ -194,7 +194,9 @@ https://www.googleapis.com/auth/gmail.send
 - 本机工具：`gog` / `gogcli`。
 - OAuth client 凭据位置：`/Users/mjhorse/Library/Application Support/gogcli/credentials.json`。
 - token 存储：macOS Keychain，`service=gogcli`。
-- 网络：访问 Google OAuth/Gmail 端点可能需要本地代理，例如 `http://127.0.0.1:7892`。
+- 网络：访问 Google OAuth/Gmail 端点需要走本地 M78 加速器代理，当前端点为 `http://127.0.0.1:7892`。
+- `gog` keyring backend 已固定为 `keychain`，避免后台/飞书触发时落到需要 passphrase 的 file keyring。
+- OpenClaw 远程发信链路为：飞书指令 → 本机 OpenClaw → `gog` → macOS Keychain refresh token → Gmail API。
 
 ## 安全注意事项
 

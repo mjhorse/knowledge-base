@@ -10,6 +10,7 @@
 - [LiteLLM Gateway](concepts/litellm-gateway.md)
 - [Langfuse Trace](concepts/langfuse-tracing.md)
 - [本地优先知识库](concepts/local-first-knowledge-base.md)
+- [Google OAuth、Gmail API 与 gogcli 本地授权](concepts/google-oauth-gmail-gogcli.md)
 
 ## 决策
 
@@ -20,12 +21,15 @@
 - [把阶段成果录入知识库](playbooks/capture-project-stage-result.md)
 - [生成 Word 架构设计文档](playbooks/create-architecture-design-doc.md)
 - [配置 Obsidian + GitHub 知识库同步](playbooks/setup-obsidian-git-sync.md)
+- [gogcli Gmail OAuth 授权与验证](playbooks/gogcli-gmail-oauth-auth-and-verify.md)
+- [OpenClaw/飞书远程触发本地 Gmail 发信](playbooks/openclaw-feishu-gmail-send.md)
 
 ## 排障
 
 - [LiteLLM/OpenAI SDK 风格请求被上游拦截](troubleshooting/litellm-openai-sdk-headers-blocked.md)
 - [Word 架构图比例不完整](troubleshooting/word-architecture-image-aspect-ratio.md)
 - [Homebrew 安装 Obsidian 下载失败](troubleshooting/obsidian-homebrew-download-failed.md)
+- [gogcli Gmail OAuth token 定位与验证](troubleshooting/gogcli-gmail-oauth-token-location-and-verification.md)
 
 ## 模板
 

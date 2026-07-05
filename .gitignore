@@ -23,3 +23,6 @@
 # Local environment/secrets
 .env
 *.env
+
+# Plugin settings containing local API keys
+.obsidian/plugins/copilot/data.json
