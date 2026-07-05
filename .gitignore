@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Obsidian local workspace/cache
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/workspace
+
+# Obsidian trash and temporary files
+.trash/
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Local editor files
+.vscode/
+.idea/
+
+# Local environment/secrets
+.env
+*.env
