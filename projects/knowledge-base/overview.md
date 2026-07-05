@@ -2,7 +2,11 @@
 type: project_summary
 project: knowledge-base
 date: 2026-07-05
-tags: [knowledge-base, obsidian, git, github]
+tags:
+  - knowledge-base
+  - obsidian
+  - github
+  - git
 status: active
 ---
 
