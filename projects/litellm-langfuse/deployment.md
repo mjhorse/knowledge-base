@@ -49,3 +49,16 @@ cd /Users/mjhorse/ai-observability/litellm
 docker compose up -d
 docker compose ps
 ```
+
+
+## 上游请求头兼容
+
+2026-07-06 排查确认，上游 `https://ai.gsykj.com/v1` 会对普通 SDK/Python 风格请求返回 `403 / error code: 1010`。LiteLLM 的 OpenAI-compatible 路由需要在 `config.yaml` 中增加浏览器风格请求头：
+
+```yaml
+extra_headers:
+  User-Agent: Mozilla/5.0
+  Accept: application/json
+```
+
+当前 `codex-default` 临时映射到上游可用的 `openai/gpt-5.5`。`claude-sonnet-4-6` 需要 relay 侧模型权限支持。
