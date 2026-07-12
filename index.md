@@ -33,6 +33,7 @@
 - [Word 架构图比例不完整](troubleshooting/word-architecture-image-aspect-ratio.md)
 - [Homebrew 安装 Obsidian 下载失败](troubleshooting/obsidian-homebrew-download-failed.md)
 - [gogcli Gmail OAuth token 定位与验证](troubleshooting/gogcli-gmail-oauth-token-location-and-verification.md)
+- [Claude Code API Key 交互式登录提示](troubleshooting/claude-code-api-key-interactive-login-prompt.md)
 
 ## 模板
 
