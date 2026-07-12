@@ -34,4 +34,5 @@ status: in_progress
 - [验证记录](verification.md)
 - [项目排障](troubleshooting.md)
 - [项目决策](decisions.md)
+- [OpenClaw Agent Session 与 Langfuse Session 语义映射架构](openclaw-langfuse-semantic-sessions.md)
 - [产出物](artifacts.md)

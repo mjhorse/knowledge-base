@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080">
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="strokeWidth" orient="auto" overflow="visible"><path d="M0 0 L10 5 L0 10z" fill="#475569"/></marker></defs>
+  <rect width="1800" height="1080" fill="#f8fafc"/>
+  <text x="900" y="58" text-anchor="middle" font-family="PingFang SC,Arial" font-size="36" font-weight="700" fill="#0f172a">OpenClaw Agent Session → Langfuse Session 语义映射架构</text>
+  <text x="900" y="96" text-anchor="middle" font-family="PingFang SC,Arial" font-size="20" fill="#475569">目标：保持 Agent 会话聚合语义，同时避免将渠道侧原始会话对象暴露给 Langfuse</text>
+
+  <rect x="55" y="165" width="430" height="650" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+  <text x="270" y="220" text-anchor="middle" font-family="PingFang SC,Arial" font-size="25" font-weight="700" fill="#075985">① OpenClaw Agent Session 域</text>
+  <text x="95" y="275" font-family="PingFang SC,Arial" font-size="19" font-weight="700" fill="#0f172a">稳定归属键：usageFamilyKey</text>
+  <rect x="85" y="305" width="370" height="110" rx="10" fill="#fff" stroke="#7dd3fc"/>
+  <text x="105" y="340" font-family="Menlo,monospace" font-size="16" fill="#0c4a6e">agent:main:main</text>
+  <text x="105" y="377" font-family="PingFang SC,Arial" font-size="16" fill="#0369a1">WebChat 主会话（全局 main）</text>
+  <rect x="85" y="440" width="370" height="130" rx="10" fill="#fff" stroke="#7dd3fc"/>
+  <text x="105" y="475" font-family="Menlo,monospace" font-size="15" fill="#0c4a6e">agent:main:feishu:group:</text>
+  <text x="105" y="501" font-family="Menlo,monospace" font-size="15" fill="#0c4a6e">oc_&lt;groupId&gt;</text>
+  <text x="105" y="540" font-family="PingFang SC,Arial" font-size="16" fill="#0369a1">飞书群会话（渠道对象敏感）</text>
+  <rect x="85" y="595" width="370" height="130" rx="10" fill="#fff" stroke="#7dd3fc"/>
+  <text x="105" y="630" font-family="Menlo,monospace" font-size="15" fill="#0c4a6e">agent:main:feishu:direct:</text>
+  <text x="105" y="656" font-family="Menlo,monospace" font-size="15" fill="#0c4a6e">ou_&lt;userId&gt;</text>
+  <text x="105" y="695" font-family="PingFang SC,Arial" font-size="16" fill="#0369a1">飞书私聊（渠道对象敏感）</text>
+  <text x="85" y="758" font-family="PingFang SC,Arial" font-size="16" fill="#334155">运行时 sessionId：可轮换 UUID，</text>
+  <text x="85" y="786" font-family="PingFang SC,Arial" font-size="16" fill="#334155">不承担长期聚合主键职责。</text>
+
+  <rect x="675" y="165" width="450" height="620" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="3"/>
+  <text x="900" y="220" text-anchor="middle" font-family="PingFang SC,Arial" font-size="28" font-weight="700" fill="#6b21a8">② 语义映射层（本地插件）</text>
+  <text x="715" y="280" font-family="PingFang SC,Arial" font-size="19" font-weight="700" fill="#581c87">解析出会话域模型</text>
+  <text x="715" y="320" font-family="Menlo,monospace" font-size="16" fill="#581c87">agentId | channel | chatType | conversation</text>
+  <path d="M735 352 L1065 352" stroke="#c084fc" stroke-width="2"/>
+  <text x="715" y="400" font-family="PingFang SC,Arial" font-size="18" fill="#312e81">规则 A：agent:main:main</text>
+  <text x="745" y="432" font-family="Menlo,monospace" font-size="16" fill="#581c87">main / webchat / direct / main</text>
+  <text x="715" y="485" font-family="PingFang SC,Arial" font-size="18" fill="#312e81">规则 B：渠道会话</text>
+  <text x="745" y="517" font-family="Menlo,monospace" font-size="16" fill="#581c87">conversation = shortHash(rawPeerId)</text>
+  <text x="715" y="570" font-family="PingFang SC,Arial" font-size="18" fill="#312e81">规则 C：会话记录未命中</text>
+  <text x="745" y="602" font-family="Menlo,monospace" font-size="16" fill="#581c87">conversation = shortHash(sessionId)</text>
+  <rect x="710" y="650" width="380" height="85" rx="10" fill="#fff" stroke="#c084fc"/>
+  <text x="900" y="685" text-anchor="middle" font-family="Menlo,monospace" font-size="16" fill="#581c87">openclaw/{agent}/{channel}/</text>
+  <text x="900" y="714" text-anchor="middle" font-family="Menlo,monospace" font-size="16" fill="#581c87">{chatType}/{conversation}</text>
+
+  <rect x="1315" y="165" width="430" height="620" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="1530" y="220" text-anchor="middle" font-family="PingFang SC,Arial" font-size="28" font-weight="700" fill="#166534">③ Langfuse Session 域</text>
+  <text x="1350" y="285" font-family="PingFang SC,Arial" font-size="19" font-weight="700" fill="#14532d">session.id（聚合主键）</text>
+  <rect x="1345" y="315" width="370" height="140" rx="10" fill="#fff" stroke="#86efac"/>
+  <text x="1365" y="353" font-family="Menlo,monospace" font-size="15" fill="#14532d">openclaw/main/webchat/</text>
+  <text x="1365" y="379" font-family="Menlo,monospace" font-size="15" fill="#14532d">direct/main</text>
+  <text x="1365" y="420" font-family="PingFang SC,Arial" font-size="16" fill="#166534">可读、无需哈希</text>
+  <rect x="1345" y="480" width="370" height="140" rx="10" fill="#fff" stroke="#86efac"/>
+  <text x="1365" y="518" font-family="Menlo,monospace" font-size="15" fill="#14532d">openclaw/main/feishu/</text>
+  <text x="1365" y="544" font-family="Menlo,monospace" font-size="15" fill="#14532d">group/&lt;shortHash&gt;</text>
+  <text x="1365" y="585" font-family="PingFang SC,Arial" font-size="16" fill="#166534">可读维度 + 脱敏对象</text>
+  <text x="1350" y="670" font-family="PingFang SC,Arial" font-size="18" font-weight="700" fill="#14532d">辅助 metadata</text>
+  <text x="1350" y="705" font-family="Menlo,monospace" font-size="15" fill="#14532d">openclaw_usage_family_key_hash</text>
+  <text x="1350" y="735" font-family="Menlo,monospace" font-size="15" fill="#14532d">openclaw_semantic_session_id</text>
+
+  <path d="M485 475 L675 475" stroke="#475569" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="580" y="450" text-anchor="middle" font-family="PingFang SC,Arial" font-size="18" fill="#475569">读取本地记录</text>
+  <path d="M1125 475 L1315 475" stroke="#475569" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="1220" y="450" text-anchor="middle" font-family="PingFang SC,Arial" font-size="18" fill="#475569">OTLP Trace 属性</text>
+
+  <rect x="120" y="870" width="1560" height="150" rx="16" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
+  <text x="160" y="917" font-family="PingFang SC,Arial" font-size="22" font-weight="700" fill="#9f1239">隐私与兼容性边界</text>
+  <text x="160" y="955" font-family="PingFang SC,Arial" font-size="17" fill="#881337">不外发原始 usageFamilyKey、origin.from / to / label、oc_ 群 ID、ou_ 用户 ID。</text>
+  <text x="160" y="983" font-family="PingFang SC,Arial" font-size="17" fill="#881337">保留 openclaw_session_id 与 usage-family 哈希；仅未来 Trace 使用新 Session 命名，历史 Session 不迁移。</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="strokeWidth" orient="auto" overflow="visible"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4b5563"/></marker>
+  </defs>
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  <text x="800" y="68" text-anchor="middle" font-family="PingFang SC, Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">OpenClaw Langfuse 语义化会话标识：隐私安全映射流程</text>
+  <text x="800" y="110" text-anchor="middle" font-family="PingFang SC, Arial, sans-serif" font-size="19" fill="#475569">运行时会话记录仅用于本地解析；外发到 Langfuse 的标识不携带原始飞书对象 ID</text>
+
+  <rect x="75" y="210" width="330" height="365" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+  <text x="240" y="265" text-anchor="middle" font-family="PingFang SC, Arial, sans-serif" font-size="27" font-weight="700" fill="#075985">OpenClaw 本地会话</text>
+  <text x="105" y="320" font-family="Menlo, monospace" font-size="18" fill="#0f172a">usageFamilyKey</text>
+  <text x="105" y="355" font-family="Menlo, monospace" font-size="16" fill="#334155">agent:main:main</text>
+  <text x="105" y="402" font-family="Menlo, monospace" font-size="16" fill="#334155">agent:main:feishu:group:</text>
+  <text x="105" y="428" font-family="Menlo, monospace" font-size="16" fill="#334155">oc_…</text>
+  <text x="105" y="475" font-family="Menlo, monospace" font-size="16" fill="#334155">agent:main:feishu:direct:</text>
+  <text x="105" y="501" font-family="Menlo, monospace" font-size="16" fill="#334155">ou_…</text>
+  <text x="105" y="548" font-family="PingFang SC, Arial, sans-serif" font-size="17" fill="#0369a1">仅在本机 sessions.json 内读取</text>
+
+  <rect x="635" y="185" width="330" height="415" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="3"/>
+  <text x="800" y="240" text-anchor="middle" font-family="PingFang SC, Arial, sans-serif" font-size="27" font-weight="700" fill="#6b21a8">Langfuse 插件映射</text>
+  <text x="670" y="300" font-family="PingFang SC, Arial, sans-serif" font-size="18" fill="#312e81">1. 解析 agent / channel / chatType</text>
+  <text x="670" y="350" font-family="PingFang SC, Arial, sans-serif" font-size="18" fill="#312e81">2. WebChat 主会话固定为 main</text>
+  <text x="670" y="400" font-family="PingFang SC, Arial, sans-serif" font-size="18" fill="#312e81">3. 外部会话对象取 SHA-256 短哈希</text>
+  <text x="670" y="450" font-family="PingFang SC, Arial, sans-serif" font-size="18" fill="#312e81">4. 保留 usageFamilyKey 哈希作关联</text>
+  <text x="670" y="515" font-family="Menlo, monospace" font-size="16" fill="#581c87">openclaw/{agent}/{channel}/</text>
+  <text x="670" y="541" font-family="Menlo, monospace" font-size="16" fill="#581c87">{chatType}/{conversation}</text>
+
+  <rect x="1195" y="210" width="330" height="365" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="1360" y="265" text-anchor="middle" font-family="PingFang SC, Arial, sans-serif" font-size="27" font-weight="700" fill="#166534">Langfuse（外发）</text>
+  <text x="1225" y="325" font-family="Menlo, monospace" font-size="15" fill="#14532d">session.id</text>
+  <text x="1225" y="354" font-family="Menlo, monospace" font-size="14" fill="#14532d">openclaw/main/webchat/</text>
+  <text x="1225" y="376" font-family="Menlo, monospace" font-size="14" fill="#14532d">direct/main</text>
+  <text x="1225" y="420" font-family="Menlo, monospace" font-size="14" fill="#14532d">openclaw/main/feishu/</text>
+  <text x="1225" y="442" font-family="Menlo, monospace" font-size="14" fill="#14532d">group/&lt;shortHash&gt;</text>
+  <text x="1225" y="490" font-family="PingFang SC, Arial, sans-serif" font-size="17" fill="#166534">metadata:</text>
+  <text x="1225" y="520" font-family="Menlo, monospace" font-size="14" fill="#14532d">openclaw_usage_family_key_hash</text>
+  <text x="1225" y="548" font-family="Menlo, monospace" font-size="14" fill="#14532d">openclaw_semantic_session_id</text>
+
+  <path d="M405 392 L635 392" stroke="#4b5563" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="520" y="370" text-anchor="middle" font-family="PingFang SC, Arial, sans-serif" font-size="17" fill="#475569">本地解析</text>
+  <path d="M965 392 L1195 392" stroke="#4b5563" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="1080" y="370" text-anchor="middle" font-family="PingFang SC, Arial, sans-serif" font-size="17" fill="#475569">OTLP Trace Export</text>
+
+  <rect x="170" y="685" width="1260" height="120" rx="16" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
+  <text x="215" y="735" font-family="PingFang SC, Arial, sans-serif" font-size="22" font-weight="700" fill="#9f1239">隐私边界</text>
+  <text x="215" y="775" font-family="PingFang SC, Arial, sans-serif" font-size="20" fill="#881337">禁止外发原始 usageFamilyKey、origin.from / to / label、飞书 oc_ 群 ID 和 ou_ 用户 ID；仅发送语义标签、短哈希与稳定关联哈希。</text>
+</svg>
