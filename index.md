@@ -20,6 +20,7 @@
 
 - [把阶段成果录入知识库](playbooks/capture-project-stage-result.md)
 - [生成 Word 架构设计文档](playbooks/create-architecture-design-doc.md)
+- [定向刷新 SVG 架构图与 Word/PPT 内嵌媒体](playbooks/targeted-svg-office-diagram-refresh.md)
 - [配置 Obsidian + GitHub 知识库同步](playbooks/setup-obsidian-git-sync.md)
 - [gogcli Gmail OAuth 授权与验证](playbooks/gogcli-gmail-oauth-auth-and-verify.md)
 - [OpenClaw/飞书远程触发本地 Gmail 发信](playbooks/openclaw-feishu-gmail-send.md)
