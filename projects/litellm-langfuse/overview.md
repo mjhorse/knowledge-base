@@ -21,11 +21,16 @@ status: in_progress
 
 ## 当前结论
 
-- LiteLLM Gateway 已运行，容器名为 `litellm-gateway`。
-- `/v1/models` 已返回模型别名。
-- Langfuse success/failure callbacks 已初始化。
-- 失败 trace 已在 Langfuse 中可见。
-- 当前阻塞：LiteLLM/OpenAI SDK 风格请求被上游 Relay 403 拦截；Claude 模型直连 chat 当前返回 502。
+- LiteLLM Gateway 当前按需停用：`litellm-gateway` 与数据库容器已停止；无已验证客户端需求时不启动，以节省资源。
+- 控制面已改为多 relay、按客户端显式分配：`gsykj` 是 Claude Code、OpenClaw、Codex 的当前已分配 relay；`yq66` 已登记为备用 Anthropic/OpenAI-compatible relay，Responses 支持待确认。
+- 路由查询必须区分默认配置、运行会话与 LiteLLM 网关证据；网关状态不能单独证明某个客户端当前路由。
+- 历史验证曾确认 `/v1/models`、Langfuse success/failure callbacks 和失败 trace；先前上游兼容性问题仍应在重新启用网关时复验。
+
+### 当前路由与网关状态
+
+- 已分配客户端：Claude Code、OpenClaw、Codex → `gsykj`。
+- 候选 relay：`yq66`（Anthropic、OpenAI-compatible；Responses 未确认）。
+- LiteLLM：禁用且容器停止；若有客户端明确需要，先进行内存预检、健康检查和路由验证。
 
 ## 关联页面
 
