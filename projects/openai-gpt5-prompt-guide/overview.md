@@ -13,10 +13,11 @@ status: completed
 
 ## 交付结果
 
-- 13 页、16:9、原生可编辑 PPT：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v3/OpenAI_GPT5_Prompting_Guide_新版叙事结构.pptx`
-- PDF 渲染稿与逐页 PNG：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v3/qa/`
-- 页面设计表：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v3/design.md`
-- QA：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v3/qa/QA.md`
+- **推荐交付（V4 演讲版）**：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v4/OpenAI_GPT5_Prompting_Guide_V4_规范重制版.pptx`
+- V4 PDF 渲染稿与逐页 PNG：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v4/qa/`
+- V4 页面设计表：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v4/design.md`
+- V4 QA：`/Users/mjhorse/.openclaw/workspace/artifacts/openai-gpt5-prompt-guide/v4/qa/QA.md`
+- V3 是此前结构版本，保留在 `artifacts/openai-gpt5-prompt-guide/v3/` 供追溯。
 
 ## 核心结论
 
@@ -27,8 +28,8 @@ status: completed
 
 ## 质量验证
 
-- LibreOffice 成功真实渲染为 PDF，并生成 13 张页面 PNG。
-- 结构检查：13 页、16:9、原生可编辑文本和形状，未发现对象越界。
+- LibreOffice 成功真实渲染 V4 为 PDF，并生成 13 张页面 PNG。
+- 结构检查：13 页、16:9、原生可编辑文本和形状，未发现对象越界；已移除 V3 连续 9pt 长说明带。
 - 可读性检查：未发现低于 8pt 的文字；正文通常 11–13pt，关键结论 15pt 以上。
 - 证据检查：13 个可点击来源链接，依据 OpenAI Cookbook、Responses API 与官方 Prompt Engineering Best Practices。
 - 限制：视觉模型服务因访问拦截/超时不可用，未完成独立视觉模型复核。
