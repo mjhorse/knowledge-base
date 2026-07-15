@@ -5,6 +5,7 @@
 - [LiteLLM + Langfuse 本地观测接入](projects/litellm-langfuse/overview.md)
 - [OpenClaw Agent Session 与 Langfuse Session 语义映射架构](projects/litellm-langfuse/openclaw-langfuse-semantic-sessions.md)
 - [本地知识库建设与同步配置](projects/knowledge-base/overview.md)
+- [OpenAI GPT-5 Prompting Guide｜新版叙事结构](projects/openai-gpt5-prompt-guide/overview.md)
 
 ## 概念
 
